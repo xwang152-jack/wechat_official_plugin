@@ -1,0 +1,76 @@
+description:
+  human:
+    en_US: Upload permanent materials (images, voice, video, thumb) to WeChat Official Account. Supports various media types with size limits.
+    zh_Hans: 上传永久素材（图片、语音、视频、缩略图）到微信公众号。支持多种媒体类型，有大小限制。
+  llm: Upload permanent materials to WeChat Official Account with support for various media types.
+extra:
+  python:
+    source: tools/upload_material.py
+identity:
+  author: xwang152-jack
+  name: upload_material
+  label:
+    en_US: Upload Permanent Material
+    zh_Hans: 上传永久素材
+parameters:
+  - name: media_type
+    type: select
+    required: true
+    label:
+      en_US: Media Type
+      zh_Hans: 媒体类型
+    human_description:
+      en_US: Type of media to upload (image, voice, video, thumb).
+      zh_Hans: 要上传的媒体类型（图片、语音、视频、缩略图）。
+    llm_description: Select the type of media file to upload. Options are image, voice, video, thumb.
+    form: llm
+    options:
+      - value: image
+        label:
+          en_US: Image
+          zh_Hans: 图片
+      - value: voice
+        label:
+          en_US: Voice
+          zh_Hans: 语音
+      - value: video
+        label:
+          en_US: Video
+          zh_Hans: 视频
+      - value: thumb
+        label:
+          en_US: Thumbnail
+          zh_Hans: 缩略图
+  - name: file_url
+    type: string
+    required: true
+    label:
+      en_US: File URL
+      zh_Hans: 文件URL
+    human_description:
+      en_US: URL of the file to upload. Must be accessible via HTTP/HTTPS.
+      zh_Hans: 要上传的文件URL。必须可通过HTTP/HTTPS访问。
+    llm_description: Provide the URL of the media file to upload. The file will be downloaded and uploaded to WeChat.
+    form: llm
+  - name: title
+    type: string
+    required: false
+    label:
+      en_US: Title
+      zh_Hans: 标题
+    human_description:
+      en_US: Title for video materials (required for video type).
+      zh_Hans: 视频素材的标题（视频类型必需）。
+    llm_description: Title for the video material. Required when media_type is video.
+    form: llm
+  - name: introduction
+    type: string
+    required: false
+    label:
+      en_US: Introduction
+      zh_Hans: 介绍
+    human_description:
+      en_US: Introduction for video materials (required for video type).
+      zh_Hans: 视频素材的介绍（视频类型必需）。
+    llm_description: Introduction for the video material. Required when media_type is video.
+    form: llm

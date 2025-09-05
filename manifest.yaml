@@ -1,0 +1,36 @@
+# 基础信息
+author: xwang152-jack
+name: wechat_official_plugin
+type: plugin
+version: 0.0.1
+label:
+  en_US: WeChat Official Account
+  zh_Hans: 微信公众号
+description:
+  en_US: WeChat Official Account API integration for Dify, supporting material management, draft operations, and message publishing.
+  zh_Hans: 微信公众号API集成插件，支持素材管理、草稿操作和消息发布功能。
+icon: icon.svg
+tags:
+  - social
+  - business
+resource:
+  memory: 1048576
+  permission:
+    model:
+      enabled: true
+      llm: true
+    tool:
+      enabled: true
+plugins:
+  tools:
+    - provider/wechat_official.yaml
+meta:
+  version: 0.0.1
+  arch: ["amd64", "arm64"]
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  requirements: requirements.txt
+created_at: '2025-09-05T10:00:00.000000000Z'
+privacy: "./PRIVACY.md"

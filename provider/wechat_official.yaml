@@ -1,0 +1,48 @@
+credentials_for_provider:
+  app_id:
+    help:
+      en_US: You can find your App ID in WeChat Official Account Platform > Development > Basic Configuration
+      zh_Hans: 您可以在微信公众平台 > 开发 > 基本配置中找到应用ID
+    label:
+      en_US: App ID
+      zh_Hans: 应用ID
+    placeholder:
+      en_US: Enter your WeChat Official Account App ID
+      zh_Hans: 请输入微信公众号应用ID
+    required: true
+    type: text-input
+    url: https://mp.weixin.qq.com
+  app_secret:
+    help:
+      en_US: You can find your App Secret in WeChat Official Account Platform > Development > Basic Configuration
+      zh_Hans: 您可以在微信公众平台 > 开发 > 基本配置中找到应用密钥
+    label:
+      en_US: App Secret
+      zh_Hans: 应用密钥
+    placeholder:
+      en_US: Enter your WeChat Official Account App Secret
+      zh_Hans: 请输入微信公众号应用密钥
+    required: true
+    type: secret-input
+extra:
+  python:
+    source: provider/wechat_official_provider.py
+identity:
+  author: xwang152-jack
+  description:
+    en_US: WeChat Official Account API provider for managing materials, drafts, and publishing content.
+    zh_Hans: 微信公众号API提供者，用于管理素材、草稿和发布内容。
+  icon: icon.svg
+  label:
+    en_US: WeChat Official Account
+    zh_Hans: 微信公众号
+  name: wechat_official
+  tags: [social, business]
+tools:
+  - tools/get_access_token.yaml
+  - tools/upload_material.yaml
+  - tools/get_material.yaml
+  - tools/delete_material.yaml
+  - tools/create_draft.yaml
+  - tools/publish_draft.yaml
+  - tools/upload_image.yaml

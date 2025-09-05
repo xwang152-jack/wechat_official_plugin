@@ -1,0 +1,26 @@
+description:
+  human:
+    en_US: Delete permanent materials from WeChat Official Account by media ID. Cannot delete materials referenced by auto-reply or custom menu.
+    zh_Hans: 通过媒体ID从微信公众号删除永久素材。无法删除被自动回复和自定义菜单引用的素材。
+  llm: Delete permanent materials from WeChat Official Account by media ID.
+extra:
+  python:
+    source: tools/delete_material.py
+identity:
+  author: xwang152-jack
+  name: delete_material
+  label:
+    en_US: Delete Permanent Material
+    zh_Hans: 删除永久素材
+parameters:
+  - name: media_id
+    type: string
+    required: true
+    label:
+      en_US: Media ID
+      zh_Hans: 媒体ID
+    human_description:
+      en_US: The media ID of the permanent material to delete.
+      zh_Hans: 要删除的永久素材的媒体ID。
+    llm_description: Provide the media ID of the permanent material you want to delete.
+    form: llm

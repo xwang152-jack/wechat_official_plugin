@@ -1,0 +1,26 @@
+description:
+  human:
+    en_US: Publish a draft to WeChat Official Account. The draft will be published as an article and become publicly accessible.
+    zh_Hans: 将草稿发布到微信公众号。草稿将作为文章发布并变为公开可访问。
+  llm: Publish a draft to WeChat Official Account as a publicly accessible article.
+extra:
+  python:
+    source: tools/publish_draft.py
+identity:
+  author: xwang152-jack
+  name: publish_draft
+  label:
+    en_US: Publish Draft
+    zh_Hans: 发布草稿
+parameters:
+  - name: media_id
+    type: string
+    required: true
+    label:
+      en_US: Draft Media ID
+      zh_Hans: 草稿媒体ID
+    human_description:
+      en_US: The media ID of the draft to publish.
+      zh_Hans: 要发布的草稿的媒体ID。
+    llm_description: Provide the media ID of the draft you want to publish. This ID is obtained when creating a draft.
+    form: llm

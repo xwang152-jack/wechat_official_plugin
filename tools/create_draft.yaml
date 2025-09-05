@@ -1,0 +1,123 @@
+description:
+  human:
+    en_US: Create a new draft for WeChat Official Account articles. Supports multiple articles in one draft.
+    zh_Hans: 为微信公众号文章创建新草稿。支持一个草稿中包含多篇文章。
+  llm: Create a new draft for WeChat Official Account articles with multiple articles support.
+extra:
+  python:
+    source: tools/create_draft.py
+identity:
+  author: xwang152-jack
+  name: create_draft
+  label:
+    en_US: Create Draft
+    zh_Hans: 创建草稿
+parameters:
+  - name: title
+    type: string
+    required: true
+    label:
+      en_US: Article Title
+      zh_Hans: 文章标题
+    human_description:
+      en_US: The title of the article.
+      zh_Hans: 文章的标题。
+    llm_description: Provide the title for the article.
+    form: llm
+  - name: content
+    type: string
+    required: true
+    label:
+      en_US: Article Content
+      zh_Hans: 文章内容
+    human_description:
+      en_US: The content of the article in HTML format.
+      zh_Hans: 文章的HTML格式内容。
+    llm_description: Provide the article content in HTML format.
+    form: llm
+  - name: author
+    type: string
+    required: false
+    label:
+      en_US: Author
+      zh_Hans: 作者
+    human_description:
+      en_US: The author of the article.
+      zh_Hans: 文章的作者。
+    llm_description: Provide the author name for the article.
+    form: llm
+  - name: digest
+    type: string
+    required: false
+    label:
+      en_US: Digest
+      zh_Hans: 摘要
+    human_description:
+      en_US: A brief summary of the article.
+      zh_Hans: 文章的简要摘要。
+    llm_description: Provide a brief summary or digest of the article.
+    form: llm
+  - name: thumb_media_id
+    type: string
+    required: true
+    label:
+      en_US: Thumbnail Media ID
+      zh_Hans: 封面的媒体ID
+    human_description:
+      en_US: The media ID of the thumbnail image.
+      zh_Hans: 封面的媒体ID。
+    llm_description: Provide the media ID of the thumbnail image for the article.
+    form: llm
+  - name: content_source_url
+    type: string
+    required: false
+    label:
+      en_US: Content Source URL
+      zh_Hans: 原文链接
+    human_description:
+      en_US: The original URL for "Read More" link.
+      zh_Hans: 点击"阅读原文"后跳转的URL。
+    llm_description: Provide the original URL for the "Read More" link.
+    form: llm
+  - name: need_open_comment
+    type: select
+    required: false
+    default: "0"
+    label:
+      en_US: Enable Comments
+      zh_Hans: 开启评论
+    human_description:
+      en_US: Whether to enable comments (0 disabled, 1 enabled).
+      zh_Hans: 是否开启评论功能（0不开启，1开启）。
+    llm_description: Choose whether to enable comments for the article.
+    form: form
+    options:
+      - value: "0"
+        label:
+          en_US: Disabled
+          zh_Hans: 不开启
+      - value: "1"
+        label:
+          en_US: Enabled
+          zh_Hans: 开启
+  - name: only_fans_can_comment
+    type: select
+    required: false
+    default: "0"
+    label:
+      en_US: Fans Only Comments
+      zh_Hans: 仅粉丝可评论
+    human_description:
+      en_US: Whether only fans can comment (0 everyone, 1 fans only).
+      zh_Hans: 是否仅粉丝可评论（0所有人，1仅粉丝）。
+    llm_description: Choose whether only fans can comment on the article.
+    form: form
+    options:
+      - value: "0"
+        label:
+          en_US: Everyone
+          zh_Hans: 所有人
+      - value: "1"
+        label:
+          en_US: Fans Only
+          zh_Hans: 仅粉丝

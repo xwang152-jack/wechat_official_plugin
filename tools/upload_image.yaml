@@ -1,0 +1,26 @@
+description:
+  human:
+    en_US: Upload images for WeChat Official Account articles. Supports JPG/PNG formats, max 1MB size.
+    zh_Hans: 上传微信公众号图文消息图片。支持JPG/PNG格式，最大1MB。
+  llm: Upload images for WeChat Official Account articles with JPG/PNG format support and 1MB size limit.
+extra:
+  python:
+    source: tools/upload_image.py
+identity:
+  author: xwang152-jack
+  name: upload_image
+  label:
+    en_US: Upload Article Image
+    zh_Hans: 上传图文消息图片
+parameters:
+  - name: image_url
+    type: string
+    required: true
+    label:
+      en_US: Image URL
+      zh_Hans: 图片URL
+    human_description:
+      en_US: URL of the image to upload. Must be accessible via HTTP/HTTPS. Supports JPG/PNG formats, max 1MB.
+      zh_Hans: 要上传的图片URL。必须可通过HTTP/HTTPS访问。支持JPG/PNG格式，最大1MB。
+    llm_description: Provide the URL of the image file to upload for WeChat article. The image will be downloaded and uploaded to WeChat. Supports JPG/PNG formats with 1MB size limit.
+    form: llm

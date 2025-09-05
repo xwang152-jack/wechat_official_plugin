@@ -1,0 +1,26 @@
+description:
+  human:
+    en_US: Get permanent materials from WeChat Official Account by media ID. Supports images, voice, video, and news materials.
+    zh_Hans: 通过媒体ID从微信公众号获取永久素材。支持图片、语音、视频和图文素材。
+  llm: Get permanent materials from WeChat Official Account by media ID.
+extra:
+  python:
+    source: tools/get_material.py
+identity:
+  author: xwang152-jack
+  name: get_material
+  label:
+    en_US: Get Permanent Material
+    zh_Hans: 获取永久素材
+parameters:
+  - name: media_id
+    type: string
+    required: true
+    label:
+      en_US: Media ID
+      zh_Hans: 媒体ID
+    human_description:
+      en_US: The media ID of the permanent material to retrieve.
+      zh_Hans: 要获取的永久素材的媒体ID。
+    llm_description: Provide the media ID of the permanent material you want to retrieve.
+    form: llm

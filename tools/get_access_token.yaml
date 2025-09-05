@@ -1,0 +1,27 @@
+description:
+  human:
+    en_US: Get a stable access token for WeChat Official Account API calls. This token is valid for 2 hours and can be refreshed.
+    zh_Hans: 获取微信公众号API调用的稳定访问令牌。此令牌有效期为2小时，可以刷新。
+  llm: A tool for getting WeChat Official Account stable access token.
+extra:
+  python:
+    source: tools/get_access_token.py
+identity:
+  author: xwang152-jack
+  name: get_access_token
+  label:
+    en_US: Get Access Token
+    zh_Hans: 获取访问令牌
+parameters:
+- name: force_refresh
+  type: boolean
+  required: true
+  label:
+    en_US: Force Refresh
+    zh_Hans: 强制刷新
+  human_description:
+    en_US: Whether to force refresh the access token. Default is false.
+    zh_Hans: 是否强制刷新访问令牌。默认为false。
+  llm_description: Set to true to force refresh the access token, false to use cached token if available.
+  form: llm
+  default: false
